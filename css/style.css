@@ -1,0 +1,186 @@
+:root {
+    /*colores  principales de la pagina*/
+    /* paleta de colores de la pagina*/
+    --blanco: #ffffff;
+    --negro: #212121;
+    --gris: #597e8d;
+    --amarillo: #ffbf00;
+    --grisOscuro: #293133;
+    --verdeclaro: #DAF7A6;
+}
+
+html {
+    font-size: 62.5%;
+    /* para el borde cajita */
+    box-sizing: border-box;
+}
+
+
+/* aplica a todos para que no afecte el padding*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Kreon', serif;
+    /*degrade */
+    background-image: linear-gradient(to top, var(--negro) 0%, var(--grisOscuro) 100%);
+}
+
+
+/* 1rem=10px*/
+
+.titulo {
+    text-align: center;
+    color: var(--verdeclaro);
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.titulo1 {
+    text-align: center;
+    color: var(--verdeclaro);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.subtitulo {
+    text-align: center;
+    color: var(--amarillo);
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.contenedor {
+    max-width: 100rem;
+    margin: 0 auto 0 auto;
+    /*margin: arriba derecha abajo izquierda*/
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(235, 221, 235, 1);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(235, 221, 235, 1);
+    box-shadow: 0px 0px 0px 0px rgba(235, 221, 235, 1);
+}
+
+.boton {
+    background-color: var(--amarillo);
+    color: var(--grisOscuro);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+.icono {
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--amarillo);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bg {
+    background-color: var(--amarillo);
+}
+
+.navegacion-principal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navegacion-principal a {
+    color: var(--grisOscuro);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--grisOscuro);
+    color: var(--blanco);
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+    color: var(--verdeclaro);
+}
+
+.foto {}
+
+.servicios-contenedor {
+    display: grid;
+    /* 1fr = 1 fraccion repeat (3 la cantidad a dividir*/
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}
+
+.unservicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.imatitulo {
+    background-color: #212f3d;
+    background-size: cover;
+    padding: 2rem;
+    border: 1rem;
+}
+
+.banner2 {
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+}
+
+.contenido-banner2 {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-banner2 h2,
+.contenido-banner2
+/*Telefono */
+
+@media (min-width:480px) {
+    .navegacion-principal .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Tablet */
+
+@media (min-width:768px) {
+    .navegacion-principal .contenedor {
+        flex-direction: row;
+    }
+}
