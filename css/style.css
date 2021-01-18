@@ -11,6 +11,8 @@
 
 html {
     font-size: 62.5%;
+    min-height: 100%;
+    /* scroll-snap-type: y mandatory; */
     /* para el borde cajita */
     box-sizing: border-box;
 }
@@ -25,10 +27,10 @@ html {
 }
 
 body {
-    font-size: 16px;
     font-family: 'Kreon', serif;
     /*degrade */
     background-image: linear-gradient(to top, var(--negro) 0%, var(--grisOscuro) 100%);
+    min-height: 100%;
 }
 
 
@@ -59,6 +61,13 @@ body {
     max-width: 100rem;
     margin: 0 auto 0 auto;
     /*margin: arriba derecha abajo izquierda*/
+}
+
+.foto {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 70%;
+    align-items: center;
 }
 
 .sombra {
@@ -96,8 +105,19 @@ body {
 }
 
 .navegacion-principal {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width:768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .navegacion-principal a {
@@ -125,13 +145,21 @@ p {
 .foto {}
 
 .servicios-contenedor {
-    display: grid;
-    /* 1fr = 1 fraccion repeat (3 la cantidad a dividir*/
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+@media (min-width:768px) {
+    .servicios-contenedor {
+        display: grid;
+        /* 1fr = 1 fraccion repeat (3 la cantidad a dividir*/
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
 }
 
 .unservicio {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,4 +211,121 @@ p {
     .navegacion-principal .contenedor {
         flex-direction: row;
     }
+}
+
+
+/* CONTACTO  */
+
+.contenedor-campos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.campo {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+@media (min-width:480px) {
+    .campo {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .campo {
+        flex: 0 0 calc(50% - .5rem)
+    }
+}
+
+.campo label {
+    color: var(--verdeclaro);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+@media (min-width:480px) {
+    .campo label {
+        flex: 0 0 90px;
+    }
+}
+
+.campo input[type="text"],
+.campo input[type="tel"],
+.campo input[type="mail"],
+.campo textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+     :is(.campo) :is( input[type="text"], input[type="text"], input[type="tel"], input[type="mail"], textarea) {
+        flex: 1;
+    }
+}
+
+.w-100 {
+    flex: 0 0 100%;
+}
+
+.campo textarea {
+    height: 4rem;
+}
+
+.enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* FORMULARIO  */
+
+.formulario {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--amarillo);
+    margin-bottom: 2rem;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+@media (min-width:768px) {
+    .formulario {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.servicios {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.botonF {
+    background-color: var(--amarillo);
+    color: var(--grisOscuro);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    text-align: center;
 }
